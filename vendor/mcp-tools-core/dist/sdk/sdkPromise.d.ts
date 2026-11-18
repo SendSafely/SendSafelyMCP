@@ -1,0 +1,53 @@
+import type SendSafely from "@sendsafely/sendsafely";
+import type { ActivityLogResult, CreatePackageResult, DirectoryListing, DownloadConfig, EnterpriseInfo, FileInfo, FinalizeResult, PackageInfo, Recipient, ReceivedPackagesResult, RecipientsResult, SentPackagesResult, UploadedPublicKey, UserInfo, WorkspacesResult } from "@sendsafely/sendsafely";
+export declare function verifyCredentials(ss: SendSafely): Promise<string>;
+export declare function getUserInformation(ss: SendSafely): Promise<UserInfo>;
+export declare function enterpriseInfo(ss: SendSafely): Promise<EnterpriseInfo>;
+export declare function getReceivedPackagesPage(ss: SendSafely, rowIndex: number): Promise<ReceivedPackagesResult>;
+export declare function getActivePackagesPage(ss: SendSafely, rowIndex: number): Promise<SentPackagesResult>;
+export declare function getArchivedPackagesPage(ss: SendSafely, rowIndex: number): Promise<SentPackagesResult>;
+export declare function getWorkspacesPage(ss: SendSafely, rowIndex: number): Promise<WorkspacesResult>;
+export declare function packageInformation(ss: SendSafely, packageId: string): Promise<PackageInfo>;
+export declare function packageInformationFromLink(ss: SendSafely, link: string): Promise<PackageInfo>;
+export declare function getPackageMessage(ss: SendSafely, packageId: string, packageCode: string, keyCode: string): Promise<unknown>;
+export declare function decryptMessage(ss: SendSafely, packageId: string, keyCode: string, serverSecret: string, ciphertext: string): Promise<string>;
+export declare function getDecryptedPackageMessage(ss: SendSafely, packageId: string, packageCode: string, keyCode: string, serverSecret: string): Promise<string | null>;
+export declare function getActivityLog(ss: SendSafely, packageId: string, rowIndex: number): Promise<ActivityLogResult>;
+export declare function getFileInformation(ss: SendSafely, packageId: string, directoryId: string | undefined, fileId: string): Promise<FileInfo>;
+export declare function downloadFileToPath(ss: SendSafely, packageId: string, fileId: string, keyCode: string, config: DownloadConfig): Promise<void>;
+export declare function downloadFileFromDirectoryToPath(ss: SendSafely, packageId: string, directoryId: string, fileId: string, keyCode: string, config: DownloadConfig): Promise<void>;
+export declare function createPackage(ss: SendSafely): Promise<CreatePackageResult>;
+export declare function createWorkspace(ss: SendSafely): Promise<CreatePackageResult>;
+export interface UploadedFile {
+    packageId: string;
+    fileId: string;
+    fileSize: number;
+    fileName: string;
+}
+export declare function encryptAndUploadFile(ss: SendSafely, packageId: string, keyCode: string, serverSecret: string, filePath: string, directoryId?: string): Promise<UploadedFile>;
+export declare function encryptAndUploadMessage(ss: SendSafely, packageId: string, keyCode: string, serverSecret: string, message: string): Promise<unknown>;
+export declare function finalizePackage(ss: SendSafely, packageId: string, packageCode: string, keyCode: string): Promise<FinalizeResult>;
+export declare function notifyPackageRecipients(ss: SendSafely, packageId: string, keyCode: string): Promise<void>;
+export declare function finalizeUndisclosedPackage(ss: SendSafely, packageId: string, packageCode: string, keyCode: string, password: string): Promise<FinalizeResult>;
+export declare function addRecipient(ss: SendSafely, packageId: string, email: string, keyCode: string): Promise<Recipient>;
+export declare function addRecipients(ss: SendSafely, packageId: string, emails: string[], keyCode: string): Promise<RecipientsResult>;
+export declare function addRecipientWithSMS(ss: SendSafely, packageId: string, email: string, keyCode: string, phonenumber: string, countryCode: string): Promise<Recipient>;
+export declare function addRecipientPhonenumber(ss: SendSafely, packageId: string, recipientId: string, phonenumber: string, countryCode: string): Promise<unknown>;
+export declare function updateRecipientRole(ss: SendSafely, packageId: string, recipientId: string, roleName: string): Promise<unknown>;
+export declare function removeRecipient(ss: SendSafely, packageId: string, recipientId: string): Promise<unknown>;
+export declare function getRecipient(ss: SendSafely, packageId: string, recipientId: string): Promise<Recipient>;
+export interface GeneratedTrustedDeviceKey {
+    privateKey: string;
+    publicKey: UploadedPublicKey;
+}
+export declare function generateRsaKeyPair(ss: SendSafely, description: string): Promise<GeneratedTrustedDeviceKey>;
+export declare function getKeycode(ss: SendSafely, privateKey: string, publicKeyId: string, packageId: string): Promise<string>;
+export declare function deletePackage(ss: SendSafely, packageId: string): Promise<unknown>;
+export declare function updatePackage(ss: SendSafely, packageId: string, data: Record<string, unknown>): Promise<PackageInfo>;
+export declare function deleteFile(ss: SendSafely, packageId: string, fileId: string, directoryId?: string): Promise<unknown>;
+export declare function updateFile(ss: SendSafely, packageId: string, fileId: string, fileName: string): Promise<unknown>;
+export declare function createDirectory(ss: SendSafely, packageId: string, directoryName: string, parentDirectoryId?: string): Promise<unknown>;
+export declare function getDirectory(ss: SendSafely, packageId: string, directoryId: string, directoryIndex: number, fileIndex: number, sortField: string, sortOrder: string): Promise<DirectoryListing>;
+export declare function renameDirectory(ss: SendSafely, packageId: string, directoryId: string, directoryName: string): Promise<unknown>;
+export declare function moveDirectory(ss: SendSafely, packageId: string, sourceDirectoryId: string, targetDirectoryId: string): Promise<unknown>;
+export declare function deleteDirectory(ss: SendSafely, packageId: string, directoryId: string): Promise<unknown>;

@@ -1,0 +1,22 @@
+SendSafely MCP Server
+Copyright 2026 SendSafely
+
+This product is licensed under the Apache License, Version 2.0. See the
+LICENSE file.
+
+This package depends on third-party packages that npm installs from the
+public registry at install time. They are not modified and are not bundled
+inside this package. At the time of this release every dependency in the
+install tree is under a permissive license (MIT, ISC, BSD-2-Clause,
+BSD-3-Clause or Apache-2.0) with one exception, listed below because its
+license carries notice requirements.
+
+OpenPGP.js (npm package "openpgp")
+https://openpgpjs.org/
+https://github.com/openpgpjs/openpgpjs
+Licensed under the GNU Lesser General Public License, version 3.0 or any
+later version (LGPL-3.0-or-later). It is required by @sendsafely/sendsafely,
+the SendSafely JavaScript SDK (Apache-2.0), and is used as an unmodified npm
+dependency. The full license text is installed with the package at
+node_modules/openpgp/LICENSE and is available at
+https://www.gnu.org/licenses/lgpl-3.0.html.

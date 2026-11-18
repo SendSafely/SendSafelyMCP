@@ -1,0 +1,27 @@
+{
+  "name": "sendsafely",
+  "displayName": "SendSafely",
+  "version": "1.0.0",
+  "description": "Find stale files, empty folders and dormant rooms in your SendSafely workspaces and clean them up, using the SendSafely connector. Works on metadata only; Claude never sees file contents.",
+  "author": {
+    "name": "SendSafely",
+    "url": "https://explore.sendsafely.com"
+  },
+  "homepage": "https://explore.sendsafely.com",
+  "repository": "https://github.com/SendSafely/SendSafelyMCP",
+  "license": "Apache-2.0",
+  "icon": "./icon.png",
+  "keywords": [
+    "sendsafely",
+    "secure file transfer",
+    "encryption",
+    "data room",
+    "workspace",
+    "virtual data room",
+    "cleanup",
+    "retention"
+  ],
+  "privacyPolicyUrl": "https://explore.sendsafely.com/privacy/",
+  "termsOfServiceUrl": "https://explore.sendsafely.com/terms/",
+  "supportUrl": "https://support.sendsafely.com/hc/en-us"
+}
