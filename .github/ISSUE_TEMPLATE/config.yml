@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security issue
+    url: https://explore.sendsafely.com/security/bug-report/
+    about: Report security issues through the SendSafely Bug Reporting Form, not as an issue.
+  - name: SendSafely support
+    url: https://support.sendsafely.com
+    about: Questions about your SendSafely account, API key or the platform.
