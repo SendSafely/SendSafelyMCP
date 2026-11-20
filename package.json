@@ -1,6 +1,6 @@
 {
   "name": "@sendsafely/mcp-server-local",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "license": "Apache-2.0",
   "description": "SendSafely MCP server (stdio transport) for Claude Desktop, Claude Code, Cursor and other MCP clients: send, receive, download and decrypt files on the SendSafely secure file transfer platform.",
   "keywords": [
