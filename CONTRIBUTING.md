@@ -8,7 +8,8 @@ This repository holds the compiled output of each released version of
 `@sendsafely/mcp-server-local` as published to npm (the bundled
 `@sendsafely/mcp-tools-core` sits under `vendor/` here rather than
 `node_modules/`), together with the package's README, LICENSE and NOTICE
-files, SECURITY.md, the issue templates and this file.
+files, SECURITY.md, the issue templates, the SendSafely plugin for Claude
+under `plugin/` and this file.
 Development happens in a private SendSafely repository, and every release
 lands here through an automated pipeline as a `v<version>` branch and pull
 request opened by the `SendSafely-Github` account.
